@@ -5,8 +5,10 @@ const path = require('path');
 const ejs = require('ejs');
 const expressLayout = require('express-ejs-layouts')
 
+app.use(express.static('public'));
+
 app.get('/', (req,res) => {
-    res.render('home')
+    res.render('home');
 })
 
 // Set Template Engine

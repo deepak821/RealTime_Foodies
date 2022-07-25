@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  font-family: "Lato", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #232323;
+}
+
+nav li a:hover {
+  transition: all 0.3s ease-in-out;
+  color: #FE5F1E;
+}
+
+section.hero {
+  background-color: #F8F8F8;
+}
+
+.size {
+  background-color: #F8F8F8;
+}
+
+.add-to-cart {
+  border: 2px solid #FE5F1E;
+  color: #FE5F1E;
+}
+.add-to-cart:hover {
+  transition: all 0.3s ease-in-out;
+  background: #FE5F1E;
+  color: #FFF;
+  border-color: #FFF;
+}
