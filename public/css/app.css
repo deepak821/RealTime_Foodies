@@ -12,6 +12,13 @@ nav li a:hover {
   color: #FE5F1E;
 }
 
+nav li:last-child a {
+  background: #FE5F1E;
+}
+nav li:last-child a:hover {
+  background: #b23301;
+}
+
 section.hero {
   background-color: #F8F8F8;
 }
@@ -29,4 +36,30 @@ section.hero {
   background: #FE5F1E;
   color: #FFF;
   border-color: #FFF;
+}
+
+.btn-primary {
+  background: #FE5F1E;
+}
+.btn-primary:hover {
+  background: #b23301;
+  transition: all 0.3s ease-in-out;
+}
+
+section.cart {
+  background: #F8F8F8;
+}
+section.cart .amount {
+  color: #FE5F1E;
+}
+
+section.login {
+  background: #F8F8F8;
+  min-height: calc(100vh - 140px);
+}
+section.login a {
+  color: #FE5F1E;
+}
+section.login a:hover {
+  color: #b23301;
 }

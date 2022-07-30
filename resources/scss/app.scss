@@ -17,6 +17,13 @@ nav li a{
     }
 }
 
+nav li:last-child a {
+    background: $primary;
+    &:hover {
+        background: $primary-hover;
+    }
+}
+
 section.hero {
     background-color: $secondary;
 }
@@ -34,5 +41,33 @@ section.hero {
         background: $primary;
         color: $pure;
         border-color: $pure;
+    }
+}
+
+.btn-primary{
+    background: $primary;
+
+    &:hover {
+        background: $primary-hover;
+        transition: $smooth;
+    }
+}
+
+section.cart {
+    background: $secondary;
+    .amount {
+        color: $primary;
+    }
+}
+
+section.login {
+    background: $secondary;
+    min-height: calc(100vh - 140px);
+
+    a{
+        color: $primary;
+        &:hover {
+            color: $primary-hover;
+        }
     }
 }
