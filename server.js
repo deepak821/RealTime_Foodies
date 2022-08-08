@@ -11,8 +11,6 @@ const flash = require('express-flash')
 const MongoDbStore = require('connect-mongo');
 const passport = require('passport')
 
-app.use(express.urlencoded({extended: false}))
-app.use(express.json())
 
 // connect DB
 const url = "mongodb://localhost/realtimeFoodies"
@@ -40,16 +38,18 @@ app.use(session({
   cookie : {maxAge : 1000 * 60 * 60 * 24}
 }))
 
-app.use(flash())
-
 // passport config
 const passportInit = require('./app/config/passport')
 passportInit(passport)
 app.use(passport.initialize())
 app.use(passport.session())
 
+app.use(flash())
+
 // asset
 app.use(express.static('public'));
+app.use(express.urlencoded({extended: false}))
+app.use(express.json()) 
 
 //global middleware
 app.use((req,res,next) => {
