@@ -1,4 +1,4 @@
-function guest(req, res, next){
+const guest = (req, res, next) => {
     if(!req.isAuthenticated()){
         return next()
     }
