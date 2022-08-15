@@ -8,13 +8,14 @@
     "serve": "node server.js",
     "development": "mix",
     "watch": "npx mix watch",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "watch-production": "mix --production -- --watch --progress"
   },
   "license": "MIT",
   "dependencies": {
     "axios": "^0.27.2",
     "bcrypt": "^5.0.1",
     "connect-mongo": "^4.6.0",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.0.1",
     "ejs": "^3.1.8",
     "express": "^4.18.1",

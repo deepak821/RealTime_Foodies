@@ -14,9 +14,7 @@ const Emitter = require('events')
 
 
 // connect DB
-const url = "mongodb://localhost/realtimeFoodies"
-
-mongoose.connect(url, {
+mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
@@ -37,7 +35,7 @@ app.use(session({
   secret : process.env.COOKIE_SECRET,
   resave : false,
   store: MongoDbStore.create({
-    mongoUrl: "mongodb://localhost/realtimeFoodies",
+    mongoUrl: process.env.MONGODB_URL,
     collectionName: 'sessions'    
   }),
   saveUninitialized : false,
@@ -72,6 +70,9 @@ app.set('views', path.join(__dirname, '/resources/views'));
 app.set('view engine', 'ejs');
 
 require('./routes/web')(app);
+app.use((req, res) => {
+  res.status(404).send("<h1>Page Not Found</h1>")
+})
 
 const server = app.listen(PORT, () =>{
     console.log(`connected at port ${PORT}`)
@@ -91,6 +92,5 @@ eventEmitter.on('orderUpdated', (data) => {
 })
 
 eventEmitter.on('orderPlaced', (data) => {
-  console.log(data);
   io.to('adminRoom').emit('orderPlaced', data)
 })

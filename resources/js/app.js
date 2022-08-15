@@ -6,9 +6,10 @@ let addToCart = document.querySelectorAll('.add-to-cart');
 let removeFromCart = document.querySelectorAll('.remove-from-cart');
 let cartCounter = document.querySelector('.cartCounter')
 let alertMsg = document.querySelector('success-alert')
-let foodqty = document.querySelector('.foodqty')
+let foodqty = document.querySelectorAll('.foodqty')
 let foodpr = document.querySelector('.food-pr')
 let foodamt = document.querySelector('.food-amt')
+
 
 function addCart(food){
    axios.post('/add-cart', food).then(res => {
